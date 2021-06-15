@@ -15,6 +15,7 @@ if grep -q "macos" <<< "$PDAL_PLATFORM"; then
     CI_PLAT="osx"
 fi
 
+export PKG_CONFIG_PATH=$CONDA_PREFIX/lib64/pkgconfig
 conda build recipe --clobber-file recipe/recipe_clobber.yaml --output-folder packages -m ".ci_support/${CI_PLAT}_64_.yaml"
 conda create -y -n test -c ./packages python=3.8 pdal
 conda deactivate
