@@ -125,9 +125,9 @@ void LasWriter::addArgs(ProgramArgs& args)
         decltype(m_creationYear)(year));
     args.add("pdal_metadata", "Write PDAL metadata as VLR?",
         m_writePDALMetadata, decltype(m_writePDALMetadata)(false));
-    args.add("scale_x", "X scale factor", m_scaleX, decltype(m_scaleX)(".01"));
-    args.add("scale_y", "Y scale factor", m_scaleY, decltype(m_scaleY)(".01"));
-    args.add("scale_z", "Z scale factor", m_scaleZ, decltype(m_scaleZ)(".01"));
+    args.add("scale_x", "X scale factor", m_scaleX, decltype(m_scaleX)(".00025"));
+    args.add("scale_y", "Y scale factor", m_scaleY, decltype(m_scaleY)(".00025"));
+    args.add("scale_z", "Z scale factor", m_scaleZ, decltype(m_scaleZ)(".00025"));
     args.add("offset_x", "X offset", m_offsetX);
     args.add("offset_y", "Y offset", m_offsetY);
     args.add("offset_z", "Z offset", m_offsetZ);
